@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #f0f4ff;
+  --color-navy-100: #e0e9ff;
+  --color-navy-200: #c7d7fe;
+  --color-navy-300: #a5bcfc;
+  --color-navy-400: #8196f8;
+  --color-navy-500: #6272f1;
+  --color-navy-600: #4e57e5;
+  --color-navy-700: #4045ca;
+  --color-navy-800: #373aa3;
+  --color-navy-900: #1e2a5a;
+  --color-navy-950: #0f172a;
+  
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+  
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-gold-700: #b45309;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Hiragino Sans', 'Meiryo', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-gray-50, #f9fafb);
+    color: var(--color-gray-900, #111827);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-navy-900);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-navy-800);
+  }
+  
+  .btn-teal {
+    background-color: var(--color-teal-600);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  .btn-teal:hover {
+    background-color: var(--color-teal-700);
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: var(--color-navy-900);
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    background-color: #f9fafb;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #f3f4f6;
+    padding: 1.5rem;
+  }
+  
+  .card-hover {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #f3f4f6;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .card-hover:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: #99f6e4;
+  }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .tag-teal {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--color-teal-50);
+    color: var(--color-teal-700);
+  }
+  
+  .tag-navy {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--color-navy-50);
+    color: var(--color-navy-700);
+  }
+  
+  .tag-gold {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--color-gold-50);
+    color: var(--color-gold-700);
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-navy-900);
+  }
+  
+  .page-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-navy-900);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 1.5s ease-in-out infinite;
+}
